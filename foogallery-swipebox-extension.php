@@ -34,7 +34,7 @@ if ( !class_exists( 'Swipebox_Lightbox_FooGallery_Extension' ) ) {
 		 */
 		function __construct() {
 			add_filter( 'foogallery_gallery_template_field_lightboxes', array($this, 'add_lightbox') );
-			add_action( 'wp_enqueue_scripts', 'load_swipebox' );
+			add_action( 'wp_enqueue_scripts', array($this, 'load_swipebox') );
 			add_action( 'foogallery_template_lightbox-swipebox', array($this, 'add_required_files') );
 			add_filter( 'foogallery_attachment_html_link_attributes', array($this, 'add_html_attributes') );
 		}
@@ -56,12 +56,13 @@ if ( !class_exists( 'Swipebox_Lightbox_FooGallery_Extension' ) ) {
 			//optional : enqueue the init code to hook up your lightbox
 			wp_enqueue_script( 'swipebox_init', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'js/lightbox-swipebox-init.js', array('swipebox'), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION, true );
 			//enqueue the lightbox stylesheets
-			foogallery_enqueue_style( 'swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/css/swipebox.min.css', array(), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
+			foogallery_enqueue_style( 'swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'css/lightbox-swipebox.css', array(), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
 		}
 		
 		function load_swipebox() {
 			//enqueue the lightbox script
-			wp_enqueue_script( 'swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/js/jquery.swipebox.min.js', array('jquery'), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
+			wp_enqueue_script( 'jquery-swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/js/jquery.swipebox.min.js', array('jquery'), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
+			wp_enqueue_style( 'jquery-swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/css/swipebox.min.css', array(), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
 		}
 
 		/**
