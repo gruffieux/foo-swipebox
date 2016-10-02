@@ -50,6 +50,7 @@ if ( !class_exists( 'Swipebox_Lightbox_FooGallery_Extension' ) ) {
 		 * Add any JS or CSS required by the extension
 		 */
 		function add_required_files() {
+			wp_enqueue_script( 'jquery', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/js/jquery-2.1.0.min', array(), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
 			//enqueue the lightbox script
 			wp_enqueue_script( 'swipebox', SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_URL . 'swipebox/js/jquery.swipebox.min.js', array('jquery'), SWIPEBOX_LIGHTBOX_FOOGALLERY_EXTENSION_VERSION );
 			//optional : enqueue the init code to hook up your lightbox
