@@ -9,3 +9,5 @@ Then swipebox is useable in your Foo galleries.
 
 # For developer
 You can customize jquery swipebox from script js/lightbox-swipebox-init.js.
+
+More info: http://brutaldesign.github.io/swipebox/
