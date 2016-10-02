@@ -1,5 +1,0 @@
-;( function( $ ) {
-
-	$( '.swipebox' ).swipebox();
-
-} )( jQuery );
