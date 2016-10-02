@@ -2,7 +2,8 @@
 Use the nice responsive swipebox for your FooGallery.
 
 # Wordpress installation
-Requirement: Foo Gallery http://foo.gallery/\r\n
+Required extension: Foo Gallery http://foo.gallery/
+
 Download package, install it in your WP extensions.
 Then swipebox is useable in your Foo galleries.
 
